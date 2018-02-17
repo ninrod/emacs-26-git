@@ -12,3 +12,9 @@ test:
 
 srcinfo:
 	makepkg --printsrcinfo > .SRCINFO
+
+clean:
+	rm -r pkg/
+	rm -r src/
+	rm *.xz
+	rm *.gz
