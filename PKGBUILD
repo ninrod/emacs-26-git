@@ -18,14 +18,15 @@
 # https://aur.archlinux.org/cgit/aur.git/tree/PKGBUILD?h=emacs-lucid
 # ----END Credits---
 
-pkgname=emacs-lucid-pre-test
+pkgname=emacs-26-git
 pkgver=26.0.91
 pkgrel=1
 pkgdesc="The extensible, customizable, self-documenting real-time display editor, compiled with the lucid toolkit"
 arch=('x86_64')
 url="http://www.gnu.org/software/emacs/emacs.html"
 license=('GPL3')
-depends=('libxfixes' 'libmagick6' 'librsvg' 'gpm' 'm17n-lib' 'hicolor-icon-theme' 'dbus' 'alsa-lib' 'gnutls' 'libxrandr' 'libxinerama')
+depends=('alsa-lib' 'desktop-file-utils' 'gconf' 'giflib' 'gnutls' 'gpm' 'gtk3' 'hicolor-icon-theme' 'libmagick6' 'libotf' 'libxpm' 'm17n-lib' 'librsvg')
+conflicts=('emacs' 'emacs-lucid-pre-test')
 source=(https://github.com/emacs-mirror/emacs/archive/emacs-$pkgver.tar.gz)
 sha1sums=('be49ce6c4c42bdb663f8066aba1c4079a6e1bb17')
 
@@ -43,8 +44,7 @@ build() {
                  ac_cv_lib_gif_EGifPutExtensionLast=yes                                         \
                  ./configure                                                                    \
                  --prefix=/usr --sysconfdir=/etc --libexecdir=/usr/lib --localstatedir=/var     \
-                 --with-x-toolkit=lucid --with-xft --with-modules --with-libotf --with-m17n-flt \
-                 --without-gconf --without-gsettings
+                 --with-x-toolkit=gtk3 --with-xft --with-modules
   make
 }
 
