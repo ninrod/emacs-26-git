@@ -21,7 +21,7 @@
 pkgname=emacs-26-git
 pkgver=26.0.91
 pkgrel=1
-pkgdesc="The extensible, customizable, self-documenting real-time display editor, compiled with the lucid toolkit"
+pkgdesc="The extensible, customizable, self-documenting real-time display editor, compiled with the gtk3 toolkit"
 arch=('x86_64')
 url="http://www.gnu.org/software/emacs/emacs.html"
 license=('GPL3')
